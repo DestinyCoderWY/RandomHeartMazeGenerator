@@ -1,5 +1,5 @@
 # RandomHeartMazeGenerator
-随机心形迷宫生成器C++版 作者 华东师范大学 吴岳
+随机心形迷宫生成器C++版 华东师范大学 吴岳
 
 VS用户可直接使用
 Codeblocks用户请删去末尾system("pause");

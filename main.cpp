@@ -1,5 +1,5 @@
 #include<iostream>
-#include <windows.h>  
+#include <windows.h>
 #include<stdlib.h>
 #include<time.h>
 #include<string>
@@ -11,10 +11,10 @@ using namespace std;
 bool SetConsoleColor(WORD forceGroundColor, WORD backGroundColor)
 
 {
-	// 获得缓冲区句柄。参数可以选择一下三种值： 
-	//// STD_INPUT_HANDLE            标准输入的句柄 
-	//// STD_OUTPUT_HANDLE            标准输出的句柄 
-	//// STD_ERROR_HANDLE`            标准错误的句柄 
+	// 获得缓冲区句柄。参数可以选择一下三种值：
+	//// STD_INPUT_HANDLE            标准输入的句柄
+	//// STD_OUTPUT_HANDLE            标准输出的句柄
+	//// STD_ERROR_HANDLE`            标准错误的句柄
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	if (handle == 0)
 		return false;
@@ -25,7 +25,7 @@ bool SetConsoleColor(WORD forceGroundColor, WORD backGroundColor)
 	cci.dwSize = 1;
 	SetConsoleCursorInfo(handle, &cci);
 
-	//设置文本及背景颜色。 
+	//设置文本及背景颜色。
 	BOOL ret = SetConsoleTextAttribute(handle, forceGroundColor | backGroundColor);
 	return(ret == TRUE);
 }
@@ -34,8 +34,8 @@ int main(void)
 {
 	//心形结构外界 0为不需打印处 1为边界 2，3为交替可出现通道处  若初始定为2则3为被2与2之间激活的通道 反之亦然
 	//4，5为已激活打印通道 6为已激活打印边界 7为已打印墙壁 8为入口与出口处 9为将要补足打印的墙壁
-	int heart[39][45] = 
-	{ 
+	int heart[39][45] =
+	{
 	{ 0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0 },
 	{ 0,0,0,0,0,0,0,0,1,8,3,2,3,2,3,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,3,2,3,2,3,1,1,0,0,0,0,0,0,0,0 },
 	{ 0,0,0,0,0,0,0,1,1,3,2,3,2,3,2,3,1,1,0,0,0,0,0,0,0,0,0,1,1,3,2,3,2,3,2,3,1,1,0,0,0,0,0,0,0},
@@ -116,7 +116,7 @@ int main(void)
 
 	//毫秒种子生成器
 	DWORD t_start, t_end;
-	t_start = GetTickCount();//从操作系统启动所经过（elapsed）的毫秒数，它的返回值是DWORD。  
+	t_start = GetTickCount();//从操作系统启动所经过（elapsed）的毫秒数，它的返回值是DWORD。
 	t_end = GetTickCount();
 
 	srand(t_end-t_start);
@@ -127,8 +127,8 @@ int main(void)
 
 
 	int init = heart[ma][na];//初始迷宫通道产生点(ma,na)的值 若初始定为2 则3将为被2与2之间激活的通道 反之亦然
-	heart[ma][na] = 4;
-	
+	heart[ma][na] = 5;
+
 
 	while (true)
 	{
@@ -691,7 +691,7 @@ int main(void)
 			}
 		}
 	}
-	
+
 	//在上面的打印中已经打印过了所有可打印通路 所以下面无需打印通路
 
 	while (true)//打印未打印内陆
@@ -778,4 +778,3 @@ int main(void)
 	system("Pause");
 	return 0;
 }
- 

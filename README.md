@@ -1,8 +1,9 @@
 # RandomHeartMazeGenerator
 随机心形迷宫生成器C++版 华东师范大学 吴岳
 
-VS用户可直接使用
-Codeblocks用户请删去末尾system("pause");
+源码见main.cpp
+
+直接运行main.exe可见效果
 
 具体实现为使用程序生成心形的01阵列
 使用数组存储这样的01阵列
